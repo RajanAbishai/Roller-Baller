@@ -46,7 +46,9 @@ public class BallPlayer : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, -Vector3.up, groundCheckRayLength) && jump)  // -Vector3.up is the same as Vector3.down
         {
-
+            myBody.AddForce(Vector3.up * jumpForce, ForceMode.Impulse); 
+            //ForceMode.Impulse is also used in 2d games to add an instant force to a rigid body using its mass.
+            //myBody.AddForce.. adds force gradually
 
         }
 
