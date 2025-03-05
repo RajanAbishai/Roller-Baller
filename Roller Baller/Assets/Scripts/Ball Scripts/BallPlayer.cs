@@ -23,7 +23,7 @@ public class BallPlayer : MonoBehaviour
 
     private void Awake()
     {
-        myBody = GetComponent<Rigidbody>(); //is get component efficient or should we use a serialize field? Yes
+        myBody = GetComponent<Rigidbody>(); //is get component efficient or should we use a serialize field? Yes. It is problematic only if we use it update
         myBody.maxAngularVelocity = maxAngularVelocity;
     }
 
@@ -31,13 +31,13 @@ public class BallPlayer : MonoBehaviour
     {
         if (useTorque)
         {
-            myBody.AddTorque(new Vector3(moveDirection.z, 0f, -moveDirection.x)* moveForce);
+            myBody.AddTorque(new Vector3(moveDirection.z, 0f, -moveDirection.x)* moveForce); //we add z here at the front for calculating torque.. this is the reason
 
         }
 
         else
         {
-            myBody.AddForce(moveDirection * moveForce);
+            myBody.AddForce(moveDirection * moveForce); 
         }
 
     }

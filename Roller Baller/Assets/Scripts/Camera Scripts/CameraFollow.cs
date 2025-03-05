@@ -25,18 +25,18 @@ public class CameraFollow : MonoBehaviour
         playerTarget = GameObject.FindGameObjectWithTag(TagManager.PLAYER_TAG).transform;
     }
 
-    private void LateUpdate() //late update is caleld last
+    private void LateUpdate() //late update is caleld last. If you have code to make a game object follow another, put it in late update
     {
         if (!playerTarget)
         
-            return; //not doing these calculations because we will get null reference exception
+            return; //not doing these calculations because we will get null reference exception. If player is dead, we will get a null reference exception
 
 
         wantedHeight = playerTarget.position.y + cameraHeight;
 
         currentHeight = transform.position.y;
 
-        currentHeight = Mathf.Lerp(currentHeight, wantedHeight, heightDamping * Time.deltaTime); // it moves from currentHeight to wantedHeight.. gradually
+        currentHeight = Mathf.Lerp(currentHeight, wantedHeight, heightDamping * Time.deltaTime); // it moves from currentHeight to wantedHeight.. gradually. What lerp does.
 
         currentRotation = Quaternion.Euler(0f, transform.eulerAngles.y, 0f);
 

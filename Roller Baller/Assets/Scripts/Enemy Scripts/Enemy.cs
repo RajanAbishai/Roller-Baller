@@ -10,7 +10,7 @@ public class Enemy : MonoBehaviour
     private float moveSpeed;
 
     [SerializeField]
-    private float minDistance = 1f;
+    private float minDistance = 1f; //checking the distance between the player and the enemy.
 
     private float distance;
 
@@ -19,7 +19,7 @@ public class Enemy : MonoBehaviour
 
     private void Awake()
     {
-        //playerTarget = GameObject.FindWithTag(TagManager.PLAYER_TAG).transform;
+        //playerTarget = GameObject.FindWithTag(TagManager.PLAYER_TAG).transform; // Done with enemy spawner
 
     }
 

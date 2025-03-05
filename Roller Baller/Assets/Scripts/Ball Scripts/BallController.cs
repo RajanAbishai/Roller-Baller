@@ -5,7 +5,7 @@ using UnityEngine;
 public class BallController : MonoBehaviour
 {
 
-    private BallPlayer ball;
+    private BallPlayer ball; //getting a reference to the BallPlayer script
 
     private Vector3 moveDirection;
     private bool jump;
