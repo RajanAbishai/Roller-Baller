@@ -11,6 +11,7 @@ public class Coin : MonoBehaviour
         {
             //inform player that coin has been collected
             // play sound
+            AudioManager.instance.PlayCoinSound();
 
             gameObject.SetActive(false);
 

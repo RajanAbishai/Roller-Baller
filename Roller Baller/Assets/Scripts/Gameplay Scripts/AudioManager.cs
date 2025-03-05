@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public static AudioManager instance; // make an instance or a singleton from this
+
+    [SerializeField]
+    private AudioSource coinSound;
+
+    private void Awake()
     {
-        
+        if (instance != null)
+        {
+            Destroy(gameObject);
+
+        }
+
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlayCoinSound()
     {
-        
+        coinSound.Play();
+
     }
+
+
 }
