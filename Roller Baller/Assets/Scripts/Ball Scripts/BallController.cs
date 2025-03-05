@@ -12,6 +12,9 @@ public class BallController : MonoBehaviour
 
     private float moveHorizontal, moveVertical;
 
+    [SerializeField]
+    private GameObject explosionParticle;
+
     private void Awake()
     {
         ball = GetComponent<BallPlayer>();
@@ -40,7 +43,12 @@ public class BallController : MonoBehaviour
         ball.Jump(jump);
     }
 
+    public void DestroyPlayer()
+    {
+        Instantiate(explosionParticle, transform.position, Quaternion.identity); // get the partcile effect to play
+        Destroy(gameObject);
 
+    }
 
 
 

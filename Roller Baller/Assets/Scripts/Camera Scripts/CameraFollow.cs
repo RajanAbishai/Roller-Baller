@@ -27,10 +27,12 @@ public class CameraFollow : MonoBehaviour
 
     private void LateUpdate() //late update is caleld last. If you have code to make a game object follow another, put it in late update
     {
-        if (!playerTarget)
+        /*if (!playerTarget) { 
         
             return; //not doing these calculations because we will get null reference exception. If player is dead, we will get a null reference exception
+        }*/
 
+        if (playerTarget) { 
 
         wantedHeight = playerTarget.position.y + cameraHeight;
 
@@ -48,6 +50,7 @@ public class CameraFollow : MonoBehaviour
         transform.position = new Vector3(transform.position.x, currentHeight, transform.position.z);
 
         transform.LookAt(playerTarget);
+        }
     }
 
 

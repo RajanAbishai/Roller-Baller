@@ -14,7 +14,9 @@ GameObject:
   - component: {fileID: 13500000}
   - component: {fileID: 5400000}
   - component: {fileID: 4313788533212017407}
-  m_Layer: 9
+  - component: {fileID: 478489149}
+  - component: {fileID: 478489150}
+  m_Layer: 0
   m_Name: RollerBall
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -211,3 +213,33 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &478489149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5163c51a3b24f2f4b8a88a4cd676030a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveForce: 20
+  useTorque: 0
+  maxAngularVelocity: 25
+  jumpForce: 20
+  groundCheckRayLength: 1
+--- !u!114 &478489150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c9c96e3e82f3024f9f22225f4e5d837, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosionParticle: {fileID: 4300757680621687479, guid: 32f083bc295704c8dbde949d654b3be9, type: 3}
