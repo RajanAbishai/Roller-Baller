@@ -46,6 +46,22 @@ public class GameplayManager : MonoBehaviour
 
     }
 
+    private void Update()
+    {
+        if (gameOver)
+        {
+            return;
+        }
+
+        CountTimer();
+        if (timerThreshold == 0f || coinCount==0)
+        {
+            GameOver();
+        }
+
+
+    }
+
     public void SetCoinCount(int coinValue) // we can use the coinValue parameter to add or subtract
     {
         coinCount += coinValue;
@@ -58,11 +74,11 @@ public class GameplayManager : MonoBehaviour
 
     }
 
-       void CountTimer()
+    void CountTimer()
     {
-        if(Time.time >timerCount)
+        if (Time.time > timerCount)
         {
-            timerCount = Time.time+1;
+            timerCount = Time.time + 1;
             timerThreshold--;
 
             timerString.Length = 0; // if you omit this, .. assume that time is "Time: 149" the next time you append the time(next line), "Time: 149Time: 148"
@@ -90,5 +106,16 @@ public class GameplayManager : MonoBehaviour
         gameOverPanel.SetActive(true);
     }
 
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(1);
+
+
+    }
+
+    public void NextLevel()
+    {
+        SceneManager.LoadScene(0); //index of the level I wanna load 
+    }
 
 }
