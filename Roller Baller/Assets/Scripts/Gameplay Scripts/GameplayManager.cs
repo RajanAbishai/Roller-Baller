@@ -67,6 +67,7 @@ public class GameplayManager : MonoBehaviour
         coinCount += coinValue;
         coinString.Length = 0; // explained in line 68
         coinString.Append("Coins: ");
+        coinString.Append(coinCount.ToString());
         coinTxt.text = coinString.ToString(); //creates only 1 string
 
         // this is much more efficient than what is below.. what is below creates 2 strings
