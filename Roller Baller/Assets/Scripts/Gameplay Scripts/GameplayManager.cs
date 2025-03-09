@@ -54,7 +54,7 @@ public class GameplayManager : MonoBehaviour
         }
 
         CountTimer();
-        if (timerThreshold == 0f || coinCount==0)
+        if (timerThreshold == 0f || coinCount==0) //if time has run out
         {
             GameOver();
         }
