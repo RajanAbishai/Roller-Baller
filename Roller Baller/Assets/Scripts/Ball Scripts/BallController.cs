@@ -34,7 +34,7 @@ public class BallController : MonoBehaviour
         // if commented out, moveDirection remains 0
         //. normalized returns the direction of the vector
         
-        print(moveDirection);
+        //print(moveDirection); disabling because direction is not needed
     }
 
     private void FixedUpdate()

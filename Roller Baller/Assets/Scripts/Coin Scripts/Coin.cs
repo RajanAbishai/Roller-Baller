@@ -10,6 +10,7 @@ public class Coin : MonoBehaviour
         if (other.gameObject.tag == TagManager.PLAYER_TAG)
         {
             //inform player that coin has been collected
+            print("coin collected!");
             GameplayManager.instance.SetCoinCount(-1); //collected a coin. So, we pass -1. 
 
             // play sound
@@ -25,6 +26,7 @@ public class Coin : MonoBehaviour
     private void Start()
     {
         //inform game manager that the coin has been created
+        print("count created - start function of coin");
 
         GameplayManager.instance.SetCoinCount(1);
     }

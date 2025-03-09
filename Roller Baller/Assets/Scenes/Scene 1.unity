@@ -1000,10 +1000,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47813a159c76ed34086e1ca24c39d004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinTxt: {fileID: 0}
-  timerTxt: {fileID: 0}
+  coinTxt: {fileID: 1204674501}
+  timerTxt: {fileID: 348004816}
   timerThreshold: 150
-  gameOverPanel: {fileID: 0}
+  gameOverPanel: {fileID: 1196260641}
 --- !u!4 &683713221
 Transform:
   m_ObjectHideFlags: 0
@@ -1660,7 +1660,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1022462594}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 683713220}
+        m_TargetAssemblyTypeName: GameplayManager, Assembly-CSharp
+        m_MethodName: NextLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1022462594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2811,7 +2823,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1896849904}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 683713220}
+        m_TargetAssemblyTypeName: GameplayManager, Assembly-CSharp
+        m_MethodName: RestartLevel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1896849904
 MonoBehaviour:
   m_ObjectHideFlags: 0
