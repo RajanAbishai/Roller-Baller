@@ -81,8 +81,14 @@ public class GameplayManager : MonoBehaviour
         gameOver = true; // will control update function with it
 
         GameObject.FindWithTag(TagManager.PLAYER_TAG).GetComponent<BallController>().DestroyPlayer();
+        Invoke("ShowGameOverPanel", 1f);
     }
 
+
+    void ShowGameOverPanel()
+    {
+        gameOverPanel.SetActive(true);
+    }
 
 
 }
