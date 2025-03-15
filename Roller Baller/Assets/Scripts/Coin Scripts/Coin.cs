@@ -25,8 +25,7 @@ public class Coin : MonoBehaviour
 
     private void Start()
     {
-        //inform game manager that the coin has been created
-        print("count created - start function of coin");
+        //inform game manager that the coin has been created. Each coin shall contribute +1
 
         GameplayManager.instance.SetCoinCount(1);
     }

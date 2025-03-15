@@ -44,6 +44,10 @@ public class GameplayManager : MonoBehaviour
 
         timerCount = Time.time + 1f; //advance time by 1 before we start counting the time
 
+        //Below code is added because the first second, it shows "Time: 0".
+
+        timerTxt.text = "Time :" + timerThreshold; // not efficient but doing it in the beginning of the level. So, it won't have a huge impact
+
     }
 
     private void Update()
@@ -64,14 +68,18 @@ public class GameplayManager : MonoBehaviour
 
     public void SetCoinCount(int coinValue) // we can use the coinValue parameter to add or subtract
     {
+        if (coinTxt != null) { 
         coinCount += coinValue;
         coinString.Length = 0; // explained in line 68
         coinString.Append("Coins: ");
         coinString.Append(coinCount.ToString());
         coinTxt.text = coinString.ToString(); //creates only 1 string
 
-        // this is much more efficient than what is below.. what is below creates 2 strings
-        // counTxt.text= "Coin: " + coinCount.ToString(); 
+            // this is much more efficient than what is below.. what is below creates 2 strings
+            // counTxt.text= "Coin: " + coinCount.ToString(); 
+        }
+
+        else { Debug.Log("CoinTxt is destroyed or not assigned"); }
 
     }
 
@@ -116,7 +124,7 @@ public class GameplayManager : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(0); //index of the level I wanna load 
+        //SceneManager.LoadScene(0); //index of the level I wanna load 
     }
 
 }
