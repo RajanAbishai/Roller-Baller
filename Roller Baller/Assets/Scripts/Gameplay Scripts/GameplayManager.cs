@@ -50,7 +50,7 @@ public class GameplayManager : MonoBehaviour
         //gameOverPanel = GameObject.Find("GameOver Panel");
         //gameOverPanel.SetActive(false);
 
-        //Find functions are not optimized but since this is the initialization of the level and you don't have several lines using it, it's fine
+        //Find functions are not optimized but since this is the initialization of the level and you don't have several lines using it, it's fine. 
 
 
         timerCount = Time.time + 1f; //advance time by 1 before we start counting the time
@@ -137,7 +137,6 @@ public class GameplayManager : MonoBehaviour
     public void RestartLevel()
     {
         SceneManager.LoadScene(1);
-
 
     }
 
