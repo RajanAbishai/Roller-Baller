@@ -30,17 +30,28 @@ public class GameplayManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance != null)
-        {
-            Destroy(gameObject); // Destroy the copy (current copy) holding the copy of the gameplay manager
+        //if (instance != null)
+        //{
+        //    Destroy(gameObject); // Destroy the copy (current copy) holding the copy of the gameplay manager
 
-        }
+        //}
 
-        else
-        {
-            instance = this;
-            DontDestroyOnLoad(gameObject);
-        }
+        //else
+        //{
+        //    instance = this;
+        //    DontDestroyOnLoad(gameObject);
+        //}
+        
+        //modified to fix the issue where coin count isn't updated when the scene is restarted. Under the GameplayManger, Coin Txt, Timer Txt and game over panel elements are missing when restarted
+        instance = this;
+
+        //coinTxt = GameObject.Find("Coin Count").GetComponent<Text>();
+        //timerTxt = GameObject.Find("Timer Count").GetComponent<Text>();
+        //gameOverPanel = GameObject.Find("GameOver Panel");
+        //gameOverPanel.SetActive(false);
+
+        //Find functions are not optimized but since this is the initialization of the level and you don't have several lines using it, it's fine
+
 
         timerCount = Time.time + 1f; //advance time by 1 before we start counting the time
 
@@ -68,18 +79,26 @@ public class GameplayManager : MonoBehaviour
 
     public void SetCoinCount(int coinValue) // we can use the coinValue parameter to add or subtract
     {
-        if (coinTxt != null) { 
+        
+      //  if (coinTxt != null) { 
+
         coinCount += coinValue;
         coinString.Length = 0; // explained in line 68
         coinString.Append("Coins: ");
         coinString.Append(coinCount.ToString());
         coinTxt.text = coinString.ToString(); //creates only 1 string
 
-            // this is much more efficient than what is below.. what is below creates 2 strings
-            // counTxt.text= "Coin: " + coinCount.ToString(); 
-        }
+        // this is much more efficient than what is below.. what is below creates 2 strings
+        // counTxt.text= "Coin: " + coinCount.ToString(); 
+        //        }
+        //      else { Debug.Log("CoinTxt is destroyed or not assigned"); }
 
-        else { Debug.Log("CoinTxt is destroyed or not assigned"); }
+        /* Checking if coinTxt exists to prevent the following error:
+         MissingReferenceException : The object of type 'Text' has been destroyed but you are still 
+        trying to access it. You script should either check if it is null or should not destroy the object
+         */
+
+
 
     }
 
